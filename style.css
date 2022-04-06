@@ -1,0 +1,92 @@
+:root {
+  --success-color: #2ecc71; /*default colors*/
+  --error-color: #e74c3c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+form {
+  padding: 30px 40px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  position: relative; /*for error messages*/
+}
+
+.form-control label {
+  display: block; /*ocupation whole with*/
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.form-control input {
+  display: block; /*ocupation whole with means error mess go down*/
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.form-control input:focus {
+  outline: 0; /*when check input elemnt*/
+  border-color: #777;
+}
+
+.form-control small {
+  color: var(--error-color); /*find with var default colors*/
+  position: absolute; /*form control s child*/
+  bottom: -5px;
+  left: 0;
+  visibility: hidden;
+}
+
+.form button {
+  cursor: pointer; /*like "finger" when touch submit*/
+  background-color: rgb(104, 110, 255);
+  border: 2px solid rgb(104, 110, 255);
+  color: #fff;
+  display: block; /*ocupation whole with like div*/
+  font-size: 16px;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.form-control.success input {
+  /*add success in html doc*/
+  border-color: var(--success-color);
+}
+
+.form-control.error input {
+  /*add error in html doc*/
+  border-color: var(--error-color);
+}
+
+.form-control.error small {
+  visibility: visible; /*eror mesage got visible*/
+}
